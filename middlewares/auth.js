@@ -14,3 +14,11 @@ const auth = (req, res, next) => {
 }
 
 export default auth;
+
+export function localVariables(req, res, next){
+    req.app.locals = {
+        OTP: null,
+        resetSession: false
+    }
+    next()
+}
